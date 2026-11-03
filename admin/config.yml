@@ -17,6 +17,15 @@ collections:
       preview: false
     files:
 
+      # ---------- ĐẦU TRANG (LOGO + CÂU DƯỚI LOGO) ----------
+      - name: header
+        label: "Đầu trang (Logo & câu dưới logo)"
+        file: "content/header.json"
+        format: json
+        fields:
+          - { label: "Chữ logo", name: logo, widget: string, hint: "Cỡ chữ giữ nguyên, chỉ đổi nội dung. Mặc định: WHY|HOW" }
+          - { label: "Câu dưới logo", name: tagline, widget: string, required: false, hint: "Để trống nếu muốn ẩn dòng này" }
+
       # ---------- KHỐI HERO SLIDER (ẢNH ĐẦU TRANG) ----------
       - name: hero
         label: "Khối Hero Slider (ảnh đầu trang)"
