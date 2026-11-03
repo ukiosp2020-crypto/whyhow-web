@@ -1,5 +1,25 @@
-{"pages":[
-{"chapter":"Trăn trở","title":"Tiêu đề trang mẫu","image":"","caption":"Chú thích ảnh mẫu: tên công trình, địa điểm, năm.","body":"Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn.\n\nĐoạn văn mẫu thứ hai giữ chỗ."},
-{"chapter":"Đương đại","title":"Tiêu đề trang mẫu","image":"","caption":"Chú thích ảnh mẫu: tên công trình, địa điểm, năm.","body":"Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn.\n\nĐoạn văn mẫu thứ hai giữ chỗ."},
-{"chapter":"Tương lai","title":"Tiêu đề trang mẫu","image":"","caption":"Chú thích ảnh mẫu: tên công trình, địa điểm, năm.","body":"Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn.\n\nĐoạn văn mẫu thứ hai giữ chỗ."}
-]}
+{
+  "pages": [
+    {
+      "chapter": "Why|How",
+      "title": "Lời giới thiệu",
+      "image": "/assets/uploads/79b0cbf113ce7920787b35368260040f.jpg",
+      "caption": "",
+      "body": "Trang web này không đơn thuần là một tấm danh thiếp số hay nơi trưng bày vài bức ảnh công trình để tìm kiếm khách hàng, mà là cách tôi định hình lại căn cước làm nghề của mình thông qua cái tên WHY|HOW.\n\nLàm thiết kế và thi công đủ lâu, tôi luôn tự vấn bản thân: trước khi bàn về kỹ thuật hay giải pháp thi công (HOW), thì lý do cốt lõi để một không gian hay một chi tiết kiến trúc tồn tại là gì (WHY). Những suy tư, trăn trở mang tính triết lý cùng trải nghiệm thực chiến đó khó lòng truyền tải trọn vẹn qua những bài đăng trôi nổi, vụn vặt và phụ thuộc vào thuật toán ồn ào của mạng xã hội.\n\nTôi cần một khoảng trống đủ rộng và một cái khung rõ ràng của riêng mình. Ở đó, người ghé thăm không bị phân tâm bởi những thứ xao nhãng, mà bước vào như mở một ấn phẩm kiến trúc tĩnh lặng — nơi từng khoảng trắng, tỷ lệ chữ và nhịp điệu hình ảnh đều phản chiếu đúng sự kỹ tính, mộc mạc và chân thực của người làm nghề.\n\nTôi dựng không gian này y như cách tôi dựng một công trình: làm chủ từng mối nối kết cấu chịu lực bên trong, thay vì chỉ khoác lên một lớp vỏ trang trí hời hợt. Hiểu rõ bản chất để tạo dựng bền vững, đó là cách tôi đối thoại với kiến trúc, và cũng là cách tôi đối thoại với chính mình."
+    },
+    {
+      "chapter": "Đương đại",
+      "title": "Tiêu đề trang mẫu",
+      "image": "",
+      "caption": "Chú thích ảnh mẫu: tên công trình, địa điểm, năm.",
+      "body": "Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn.\n\nĐoạn văn mẫu thứ hai giữ chỗ."
+    },
+    {
+      "chapter": "Tương lai",
+      "title": "Tiêu đề trang mẫu",
+      "image": "",
+      "caption": "Chú thích ảnh mẫu: tên công trình, địa điểm, năm.",
+      "body": "Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn.\n\nĐoạn văn mẫu thứ hai giữ chỗ."
+    }
+  ]
+}
