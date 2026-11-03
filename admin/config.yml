@@ -17,6 +17,19 @@ collections:
       preview: false
     files:
 
+      # ---------- KHỐI HERO SLIDER (ẢNH ĐẦU TRANG) ----------
+      - name: hero
+        label: "Khối Hero Slider (ảnh đầu trang)"
+        file: "content/hero.json"
+        format: json
+        fields:
+          - label: "Ảnh Hero (tối đa 6 ảnh, tỷ lệ 16:9, tự chuyển mỗi 4 giây)"
+            name: images
+            widget: list
+            min: 1
+            max: 6
+            field: { label: "Ảnh", name: image, widget: image }
+
       # ---------- KHỐI TRĂN TRỞ (3 TRANG SÁCH) ----------
       - name: story
         label: "Khối Trăn trở (3 trang)"
