@@ -1,0 +1,94 @@
+backend:
+  name: git-gateway
+  branch: main            # đổi thành master nếu nhánh chính của bạn tên master
+
+# Chạy thử trên máy (npx decap-server) thì bỏ dấu # ở dòng dưới. Nhớ xóa khi đưa lên mạng.
+# local_backend: true
+
+site_url: https://whyhow.vn
+display_url: https://whyhow.vn
+media_folder: "assets/uploads"      # nơi lưu ảnh tải lên (trong repo)
+public_folder: "/assets/uploads"    # đường dẫn ảnh trên website
+
+collections:
+  - name: noi_dung
+    label: "Nội dung website"
+    editor:
+      preview: false
+    files:
+
+      # ---------- KHỐI TRĂN TRỞ (3 TRANG SÁCH) ----------
+      - name: story
+        label: "Khối Trăn trở (3 trang)"
+        file: "content/story.json"
+        format: json
+        fields:
+          - label: "Các trang"
+            name: pages
+            widget: list
+            min: 3
+            max: 3
+            summary: "{{fields.chapter}} — {{fields.title}}"
+            fields:
+              - { label: "Tiêu đề chương (góc trên)", name: chapter, widget: string }
+              - { label: "Tiêu đề trang", name: title, widget: string }
+              - { label: "Ảnh minh họa (tỷ lệ 3:2)", name: image, widget: image, required: false }
+              - { label: "Chú thích ảnh", name: caption, widget: string, required: false }
+              - { label: "Nội dung", name: body, widget: text, hint: "Cách một dòng trống để xuống đoạn mới" }
+
+      # ---------- KHỐI DỰ ÁN TIÊU BIỂU ----------
+      - name: albums
+        label: "Khối Dự án tiêu biểu"
+        file: "content/albums.json"
+        format: json
+        fields:
+          - label: "Danh sách album (thêm / sửa / xóa / kéo để sắp xếp)"
+            name: albums
+            widget: list
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - { label: "Tên dự án", name: name, widget: string }
+              - { label: "Địa điểm", name: location, widget: string, hint: "Ví dụ: Hà Nội · 2024" }
+              - { label: "Mô tả ngắn", name: description, widget: text, required: false }
+              - { label: "Ảnh đại diện (vuông)", name: cover, widget: image }
+              - label: "Bộ ảnh chi tiết"
+                name: photos
+                widget: list
+                required: false
+                field: { label: "Ảnh", name: image, widget: image }
+
+      # ---------- KHỐI QUY TRÌNH & CAM KẾT ----------
+      - name: process
+        label: "Khối Quy trình & Cam kết"
+        file: "content/process.json"
+        format: json
+        fields:
+          - label: "Các bước làm việc (thứ tự trong danh sách là thứ tự hiển thị)"
+            name: steps
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Tên bước", name: title, widget: string }
+              - { label: "Mô tả", name: desc, widget: text }
+          - label: "Cam kết chất lượng"
+            name: pledges
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Tiêu đề cam kết", name: title, widget: string }
+              - { label: "Nội dung", name: desc, widget: text }
+
+      # ---------- THÔNG TIN LIÊN HỆ (FOOTER) ----------
+      - name: contact
+        label: "Thông tin liên hệ (Footer)"
+        file: "content/contact.json"
+        format: json
+        fields:
+          - { label: "Hotline", name: hotline, widget: string, hint: "Ví dụ: 0988 123 456" }
+          - label: "Link Zalo"
+            name: zalo
+            widget: string
+            hint: "Dạng https://zalo.me/số-điện-thoại"
+            pattern: ['^https://zalo\.me/.+', "Link phải bắt đầu bằng https://zalo.me/"]
+          - { label: "Email", name: email, widget: string }
+          - { label: "Địa chỉ studio", name: address, widget: string }

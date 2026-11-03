@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WHY|HOW — Thiết kế & Thi công Kiến trúc</title>
+<!-- Netlify Identity: đăng nhập vào /admin -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F2EB;--ink:#5F5B55;--ink2:#8B867E;--block:#D9D9D9;--line:#D9D3C6;--deep:#3E3A35;--ink3:#67635C}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 14px/1.6 Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px}
+.wrap{max-width:440px;margin:0 auto;padding:calc(48px + env(safe-area-inset-top,0px)) 24px calc(32px + env(safe-area-inset-bottom,0px))}
+.ph{background:var(--block)}
+.cover{background-size:cover;background-position:center}
+
+/* Header */
+header{text-align:center}
+.logo{background:none;border:0;padding:4px 8px;font-weight:600;font-size:28px;letter-spacing:.02em;color:var(--ink)}
+.tag{font-size:12px;color:var(--deep);margin-top:2px}
+
+/* Hero */
+.hero{position:relative;margin-top:24px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--block)}
+.hero .s{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.hero .s.on{opacity:1}
+
+/* Story */
+.story{margin-top:40px}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:16px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;border-radius:16px;background:var(--block);padding:20px 22px 28px;display:flex;flex-direction:column}
+.pg{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid rgba(62,58,53,.25);font-size:12px;color:var(--ink3)}
+.pn{font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.ch{font-weight:500;color:var(--deep);text-align:right}
+.slide figure{margin:18px 0 0}
+.pic{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;background:#C9C9C9}
+.slide figcaption{margin-top:8px;font-size:11px;line-height:1.5;color:var(--ink3)}
+.tx{margin-top:22px}
+.tx h2{font-size:20px;font-weight:600;color:var(--deep);line-height:1.35}
+.tx p{margin-top:12px;font-size:14px;line-height:1.9}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.dots button{width:8px;height:8px;border:0;padding:0;border-radius:8px;background:#C7C0B1;transition:width .25s,background .25s}
+.dots button.on{width:22px;background:var(--deep)}
+
+/* Reel */
+.reel{display:flex;gap:10px;margin-top:40px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-bottom:2px}
+.reel::-webkit-scrollbar{display:none}
+.tile{flex:0 0 calc((100% - 30px)/4);scroll-snap-align:start;background:none;border:0;padding:0;text-align:left;min-width:0}
+.tile i{display:block;aspect-ratio:1;border-radius:14px;transition:transform .2s}
+.tile:active i{transform:scale(.96)}
+.tile span{display:block;margin-top:6px;font-size:11px;line-height:1.35;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Process & standards */
+.sec{margin-top:48px}
+.sec h2{font-size:15px;font-weight:600;color:var(--deep)}
+.list{list-style:none;padding:0;margin-top:8px}
+.list li{display:grid;grid-template-columns:28px 1fr;gap:6px;padding:14px 0;border-bottom:1px solid var(--line)}
+.list li:last-child{border-bottom:0}
+.list b{font-weight:500;color:var(--deep)}
+.list .n{color:var(--ink2);font-weight:500}
+.list p{font-size:13px;color:var(--ink2)}
+.std li{grid-template-columns:1fr}
+
+/* Footer */
+footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
+.soc{display:flex;justify-content:center;gap:10px}
+.soc a{width:40px;height:40px;border-radius:12px;background:var(--block);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.soc a:hover{background:var(--deep);color:var(--bg)}
+.soc svg{width:16px;height:16px;fill:currentColor}
+.ct{margin-top:20px;font-size:13px}
+.ct a{color:var(--deep);font-weight:500;text-decoration:none}
+.ct p{color:var(--ink2)}
+.copy{margin-top:20px;font-size:11px;color:var(--ink2)}
+
+/* Bottom sheet */
+.bg{position:fixed;inset:0;z-index:50;background:rgba(40,36,31,.5);display:flex;align-items:flex-end;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.bg.open{opacity:1;visibility:visible}
+.sheet{width:100%;max-width:440px;max-height:88vh;overflow-y:auto;background:var(--bg);border-radius:20px 20px 0 0;padding:12px 24px calc(28px + env(safe-area-inset-bottom,0px));transform:translateY(100%);transition:transform .3s cubic-bezier(.3,.8,.3,1)}
+.bg.open .sheet{transform:none}
+.grab{width:40px;height:4px;border-radius:4px;background:#CFC8B8;margin:0 auto 14px}
+.sh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.sheet h3{font-size:20px;font-weight:600;color:var(--deep);line-height:1.3}
+.sheet .meta{font-size:12px;color:var(--ink2);margin-top:2px}
+.x{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:var(--block);font-size:18px;line-height:1}
+.sheet .desc{margin-top:14px}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.pics div{aspect-ratio:4/3;border-radius:12px}
+.pics div:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.cta{display:block;margin-top:18px;padding:12px;border-radius:12px;background:var(--deep);color:var(--bg);text-align:center;text-decoration:none;font-weight:500}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <button class="logo" id="logo" aria-label="WHY|HOW — về đầu trang">WHY|HOW</button>
+    <p class="tag">“Một khung rõ ràng, một khoảng trống đủ rộng…”</p>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero" role="img" aria-label="Công trình tiêu biểu của WHY|HOW"></section>
+
+  <!-- Story -->
+  <section class="story" aria-label="Câu chuyện WHY|HOW">
+    <div class="track" id="track" tabindex="0">
+      <!-- ================= TRANG 01 ================= -->
+      <article class="slide" aria-label="Trang 1 trên 3">
+        <div class="pg">
+          <span class="pn">01 / 03</span>
+          <span class="ch"><!-- NHẬP TIÊU ĐỀ CHƯƠNG VÀO ĐÂY -->Trăn trở</span>
+        </div>
+        <figure>
+          <!-- THAY ẢNH VÀO ĐÂY: dán link ảnh vào src="" (tỷ lệ 3:2, tự cắt vừa khung) -->
+          <img class="pic" src="" alt="Ảnh minh họa trang 1">
+          <figcaption><!-- NHẬP CHÚ THÍCH ẢNH VÀO ĐÂY -->Chú thích ảnh mẫu: tên công trình, địa điểm, năm.</figcaption>
+        </figure>
+        <div class="tx">
+          <h2><!-- NHẬP TIÊU ĐỀ TRANG VÀO ĐÂY -->Tiêu đề trang mẫu</h2>
+          <!-- NHẬP NỘI DUNG VÀO ĐÂY (mỗi đoạn một thẻ <p>) -->
+          <p>Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn, nên giữ khoảng hai đến ba đoạn ngắn để trang đọc thoáng như trang tạp chí.</p>
+          <p>Đoạn văn mẫu thứ hai giữ chỗ. Có thể xóa thẻ này nếu trang chỉ cần một đoạn.</p>
+        </div>
+      </article>
+      <!-- ================= TRANG 02 ================= -->
+      <article class="slide" aria-label="Trang 2 trên 3">
+        <div class="pg">
+          <span class="pn">02 / 03</span>
+          <span class="ch"><!-- NHẬP TIÊU ĐỀ CHƯƠNG VÀO ĐÂY -->Đương đại</span>
+        </div>
+        <figure>
+          <!-- THAY ẢNH VÀO ĐÂY: dán link ảnh vào src="" (tỷ lệ 3:2, tự cắt vừa khung) -->
+          <img class="pic" src="" alt="Ảnh minh họa trang 2">
+          <figcaption><!-- NHẬP CHÚ THÍCH ẢNH VÀO ĐÂY -->Chú thích ảnh mẫu: tên công trình, địa điểm, năm.</figcaption>
+        </figure>
+        <div class="tx">
+          <h2><!-- NHẬP TIÊU ĐỀ TRANG VÀO ĐÂY -->Tiêu đề trang mẫu</h2>
+          <!-- NHẬP NỘI DUNG VÀO ĐÂY (mỗi đoạn một thẻ <p>) -->
+          <p>Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn, nên giữ khoảng hai đến ba đoạn ngắn để trang đọc thoáng như trang tạp chí.</p>
+          <p>Đoạn văn mẫu thứ hai giữ chỗ. Có thể xóa thẻ này nếu trang chỉ cần một đoạn.</p>
+        </div>
+      </article>
+      <!-- ================= TRANG 03 ================= -->
+      <article class="slide" aria-label="Trang 3 trên 3">
+        <div class="pg">
+          <span class="pn">03 / 03</span>
+          <span class="ch"><!-- NHẬP TIÊU ĐỀ CHƯƠNG VÀO ĐÂY -->Tương lai</span>
+        </div>
+        <figure>
+          <!-- THAY ẢNH VÀO ĐÂY: dán link ảnh vào src="" (tỷ lệ 3:2, tự cắt vừa khung) -->
+          <img class="pic" src="" alt="Ảnh minh họa trang 3">
+          <figcaption><!-- NHẬP CHÚ THÍCH ẢNH VÀO ĐÂY -->Chú thích ảnh mẫu: tên công trình, địa điểm, năm.</figcaption>
+        </figure>
+        <div class="tx">
+          <h2><!-- NHẬP TIÊU ĐỀ TRANG VÀO ĐÂY -->Tiêu đề trang mẫu</h2>
+          <!-- NHẬP NỘI DUNG VÀO ĐÂY (mỗi đoạn một thẻ <p>) -->
+          <p>Đoạn văn mẫu giữ chỗ. Thay bằng nội dung của bạn, nên giữ khoảng hai đến ba đoạn ngắn để trang đọc thoáng như trang tạp chí.</p>
+          <p>Đoạn văn mẫu thứ hai giữ chỗ. Có thể xóa thẻ này nếu trang chỉ cần một đoạn.</p>
+        </div>
+      </article>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- Portfolio reel -->
+  <section class="reel" id="reel" aria-label="Album công trình"></section>
+
+  <!-- Process -->
+  <section class="sec" id="process">
+    <h2>Quy trình làm việc</h2>
+    <ol class="list" id="steps">
+      <li><span class="n">1</span><div><b>Khảo sát & định hình ý niệm</b><p>Phân tích hướng nắng gió, đo đạc hiện trạng, làm rõ bài toán ngân sách thực tế.</p></div></li>
+      <li><span class="n">2</span><div><b>Thiết kế kỹ thuật & dự toán</b><p>Mặt bằng công năng, phối cảnh ánh sáng, bóc tách khối lượng minh bạch.</p></div></li>
+      <li><span class="n">3</span><div><b>Thi công & giám sát hiện trường</b><p>Đội thợ chuẩn hóa tay nghề, báo cáo tiến độ kỹ thuật mỗi ngày.</p></div></li>
+      <li><span class="n">4</span><div><b>Bàn giao & bảo hành</b><p>Nghiệm thu theo hồ sơ thiết kế, bàn giao kèm hướng dẫn sử dụng và bảo trì.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- Standards -->
+  <section class="sec" id="standards">
+    <h2>Cam kết chất lượng</h2>
+    <ul class="list std" id="pledges">
+      <li><div><b>Dự toán rõ từng hạng mục</b><p>Khối lượng được bóc tách trước khi ký, không phát sinh mơ hồ.</p></div></li>
+      <li><div><b>Vật liệu đúng như hồ sơ</b><p>Chủng loại, quy cách và nguồn gốc ghi trong bản vẽ và bảng dự toán.</p></div></li>
+      <li><div><b>Tiến độ minh bạch</b><p>Nhật ký thi công và hình ảnh hiện trường cập nhật hằng ngày.</p></div></li>
+      <li><div><b>Một đầu mối chịu trách nhiệm</b><p>Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận.</p></div></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="soc">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97v7.55c0 1.6-.45 3.2-1.39 4.51-1.63 2.29-4.42 3.5-7.22 3.19-2.73-.3-5.06-2.13-5.99-4.71-.93-2.58-.2-5.54 1.83-7.42 1.85-1.72 4.55-2.22 6.9-1.28v4.18c-.89-.48-1.95-.57-2.91-.25-1.16.39-1.99 1.48-2.07 2.72-.09 1.34.72 2.62 1.96 3.12 1.18.48 2.59.24 3.52-.61.64-.58.98-1.41.98-2.28V.02h-.02z"/></svg></a>
+      <a href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer" aria-label="Zalo">Zalo</a>
+    </div>
+    <div class="ct">
+      <p id="c-hot">Hotline: <a href="tel:0988000000">0988.xxx.xxx</a></p>
+      <p id="c-zalo">Zalo: <a href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer">zalo.me/0988000000</a></p>
+      <p id="c-mail">Email: <a href="mailto:contact@whyhow.vn">contact@whyhow.vn</a></p>
+      <p id="c-addr">Hà Nội, Việt Nam</p>
+    </div>
+    <p class="copy">© 2026 WHY|HOW. Bảo lưu mọi quyền.</p>
+  </footer>
+</div>
+
+<!-- Bottom sheet -->
+<div class="bg" id="bg" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t">
+    <div class="grab"></div>
+    <div class="sh-top">
+      <div><h3 id="sh-t"></h3><p class="meta" id="sh-m"></p></div>
+      <button class="x" id="sh-x" aria-label="Đóng">×</button>
+    </div>
+    <p class="desc" id="sh-d"></p>
+    <div class="pics" id="sh-p"></div>
+    <a class="cta" href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer">Trao đổi qua Zalo</a>
+  </div>
+</div>
+
+<script>
+/* ===== CẤU HÌNH: thay link ảnh thật vào đây (để '' sẽ hiện khung màu kem) ===== */
+const HERO = ['', '', '', '', '', ''];            // 5–6 ảnh hero, tỷ lệ 16:9
+let ALBUMS = [
+  {name:'Nhà phố Yên Lãng', meta:'Hà Nội · 2024', desc:'Giải phóng lõi thang bộ, đưa giếng trời và mảng xanh vào trung tâm để không khí đối lưu tự nhiên.', cover:'', photos:['','','']},
+  {name:'Penthouse Ecopark', meta:'Ecopark · 2025', desc:'Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.', cover:'', photos:['','','']},
+  {name:'Villa vườn Ba Vì', meta:'Ba Vì · 2024', desc:'Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.', cover:'', photos:['','','']},
+  {name:'The Concrete House', meta:'Hà Nội · 2024', desc:'Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.', cover:'', photos:['','','']}
+];
+/* ================================================================================ */
+
+const $ = (s, r = document) => r.querySelector(s);
+const setBg = (el, url) => { if (url) { el.style.backgroundImage = `url("${url}")`; el.classList.add('cover'); } else el.classList.add('ph'); };
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Logo → scroll to top */
+$('#logo').addEventListener('click', () => window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'}));
+
+/* Hero crossfade 4s */
+(function () {
+  const hero = $('#hero');
+  const slides = HERO.map((u, i) => { const d = document.createElement('div'); d.className = 's' + (i ? '' : ' on'); setBg(d, u); hero.appendChild(d); return d; });
+  let i = 0, timer = null;
+  const tick = () => { slides[i].classList.remove('on'); i = (i + 1) % slides.length; slides[i].classList.add('on'); };
+  const start = () => { if (!timer && !reduce && slides.length > 1) timer = setInterval(tick, 4000); };
+  const stop = () => { clearInterval(timer); timer = null; };
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  start();
+})();
+
+/* Story slider + dots */
+(function () {
+  const track = $('#track'), dots = $('#dots'), n = track.children.length;
+  const step = () => track.clientWidth + 12;
+  for (let k = 0; k < n; k++) {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Slide ' + (k + 1));
+    b.addEventListener('click', () => track.scrollTo({left: k * step(), behavior: reduce ? 'auto' : 'smooth'}));
+    dots.appendChild(b);
+  }
+  const mark = () => { const k = Math.min(n - 1, Math.max(0, Math.round(track.scrollLeft / step()))); [...dots.children].forEach((b, j) => b.classList.toggle('on', j === k)); };
+  let raf; track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(mark); }, {passive: true});
+  addEventListener('resize', mark);
+  mark();
+})();
+
+/* Portfolio reel + bottom sheet */
+(function () {
+  const reel = $('#reel'), bg = $('#bg');
+  let lastFocus = null;
+  function renderReel() {
+  reel.innerHTML = '';
+  ALBUMS.forEach((a, k) => {
+    const t = document.createElement('button');
+    t.className = 'tile';
+    t.setAttribute('aria-label', 'Xem album ' + a.name);
+    const i = document.createElement('i'); setBg(i, a.cover);
+    const s = document.createElement('span'); s.textContent = a.name;
+    t.append(i, s);
+    t.addEventListener('click', () => open(k, t));
+    reel.appendChild(t);
+  });
+  }
+  window.renderReel = renderReel;
+  renderReel();
+  function open(k, from) {
+    const a = ALBUMS[k];
+    $('#sh-t').textContent = a.name; $('#sh-m').textContent = a.meta; $('#sh-d').textContent = a.desc;
+    const p = $('#sh-p'); p.innerHTML = '';
+    (a.photos.length ? a.photos : [a.cover]).forEach(u => { const d = document.createElement('div'); setBg(d, u); p.appendChild(d); });
+    lastFocus = from; bg.classList.add('open'); bg.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lock'); $('#sh-x').focus();
+  }
+  function close() {
+    bg.classList.remove('open'); bg.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lock'); if (lastFocus) lastFocus.focus();
+  }
+  $('#sh-x').addEventListener('click', close);
+  bg.addEventListener('click', e => { if (e.target === bg) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && bg.classList.contains('open')) close(); });
+})();
+
+/* ===== NỘI DUNG TỪ DECAP CMS (đọc content/*.json; lỗi hoặc thiếu file thì giữ nội dung mẫu) ===== */
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const getJSON = n => fetch('content/' + n + '.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null);
+const paras = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join('');
+
+(async function () {
+  const [story, albums, process, contact] = await Promise.all(['story', 'albums', 'process', 'contact'].map(getJSON));
+
+  if (story && story.pages && story.pages.length) {
+    const n = story.pages.length, pad = v => String(v).padStart(2, '0');
+    $('#track').innerHTML = story.pages.map((p, i) => `
+      <article class="slide" aria-label="Trang ${i + 1} trên ${n}">
+        <div class="pg"><span class="pn">${pad(i + 1)} / ${pad(n)}</span><span class="ch">${esc(p.chapter)}</span></div>
+        <figure>${p.image ? `<img class="pic" src="${esc(p.image)}" alt="${esc(p.caption || p.title)}" loading="lazy">` : '<div class="pic"></div>'}<figcaption>${esc(p.caption)}</figcaption></figure>
+        <div class="tx"><h2>${esc(p.title)}</h2>${paras(p.body)}</div>
+      </article>`).join('');
+  }
+
+  if (albums && albums.albums && albums.albums.length) {
+    ALBUMS = albums.albums.map(a => ({name: a.name, meta: a.location, desc: a.description || '', cover: a.cover || '', photos: a.photos || []}));
+    window.renderReel();
+  }
+
+  if (process && process.steps && process.steps.length)
+    $('#steps').innerHTML = process.steps.map((s, i) => `<li><span class="n">${i + 1}</span><div><b>${esc(s.title)}</b><p>${esc(s.desc)}</p></div></li>`).join('');
+  if (process && process.pledges && process.pledges.length)
+    $('#pledges').innerHTML = process.pledges.map(s => `<li><div><b>${esc(s.title)}</b><p>${esc(s.desc)}</p></div></li>`).join('');
+
+  if (contact) {
+    if (contact.hotline) { const a = $('#c-hot a'); a.textContent = contact.hotline; a.href = 'tel:' + contact.hotline.replace(/[^\d+]/g, ''); }
+    if (/^https:\/\/zalo\.me\//.test(contact.zalo || '')) {
+      document.querySelectorAll('a[href^="https://zalo.me/"]').forEach(a => a.href = contact.zalo);
+      $('#c-zalo a').textContent = contact.zalo.replace(/^https:\/\//, '');
+    }
+    if (contact.email) { const a = $('#c-mail a'); a.textContent = contact.email; a.href = 'mailto:' + contact.email; }
+    if (contact.address) $('#c-addr').textContent = contact.address;
+  }
+})();
+</script>
+<script>
+/* Sau khi đăng nhập Netlify Identity thì chuyển vào /admin/ */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+  });
+}
+</script>
+</body>
+</html>
