@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WHY|HOW — Thiết kế & Thi công Kiến trúc</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#F5F2EB">
 <!-- Netlify Identity: đăng nhập vào /admin -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,8 +319,13 @@ const getJSON = n => fetch('content/' + n + '.json', {cache: 'no-cache'}).then(r
 const paras = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join('');
 
 (async function () {
-  const [story, albums, process, contact, heroData] = await Promise.all(['story', 'albums', 'process', 'contact', 'hero'].map(getJSON));
+  const [story, albums, process, contact, heroData, headerData] = await Promise.all(['story', 'albums', 'process', 'contact', 'hero', 'header'].map(getJSON));
   initHero(heroData && heroData.images && heroData.images.length ? heroData.images : HERO);
+
+  if (headerData) {
+    if (headerData.logo) { $('#logo').textContent = headerData.logo; $('#logo').setAttribute('aria-label', headerData.logo + ' — về đầu trang'); }
+    if (typeof headerData.tagline === 'string') $('.tag').textContent = headerData.tagline;
+  }
 
   if (story && story.pages && story.pages.length) {
     const n = story.pages.length, pad = v => String(v).padStart(2, '0');
