@@ -246,16 +246,16 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#logo').addEventListener('click', () => window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'}));
 
 /* Hero crossfade 4s */
-(function () {
+function initHero(list) {
   const hero = $('#hero');
-  const slides = HERO.map((u, i) => { const d = document.createElement('div'); d.className = 's' + (i ? '' : ' on'); setBg(d, u); hero.appendChild(d); return d; });
+  const slides = list.map((u, i) => { const d = document.createElement('div'); d.className = 's' + (i ? '' : ' on'); setBg(d, u); hero.appendChild(d); return d; });
   let i = 0, timer = null;
   const tick = () => { slides[i].classList.remove('on'); i = (i + 1) % slides.length; slides[i].classList.add('on'); };
   const start = () => { if (!timer && !reduce && slides.length > 1) timer = setInterval(tick, 4000); };
   const stop = () => { clearInterval(timer); timer = null; };
   document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
   start();
-})();
+}
 
 /* Story slider + dots */
 (function () {
@@ -315,7 +315,8 @@ const getJSON = n => fetch('content/' + n + '.json', {cache: 'no-cache'}).then(r
 const paras = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join('');
 
 (async function () {
-  const [story, albums, process, contact] = await Promise.all(['story', 'albums', 'process', 'contact'].map(getJSON));
+  const [story, albums, process, contact, heroData] = await Promise.all(['story', 'albums', 'process', 'contact', 'hero'].map(getJSON));
+  initHero(heroData && heroData.images && heroData.images.length ? heroData.images : HERO);
 
   if (story && story.pages && story.pages.length) {
     const n = story.pages.length, pad = v => String(v).padStart(2, '0');
