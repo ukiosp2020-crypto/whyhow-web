@@ -118,6 +118,27 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
 .pm-b p{line-height:1.85}.pm-b p+p{margin-top:12px}
 @media (max-width:640px){.pm{width:90vw;height:70vh}}
 
+/* ===== MÁY TÍNH (>=1024px): cột cố định 910px, logo nằm giữa Hero và khối giới thiệu ===== */
+.arr{display:none}
+@media (min-width:1024px){
+  .wrap{max-width:958px;display:flex;flex-direction:column;padding-top:calc(30px + env(safe-area-inset-top,0px))}
+  .hero{order:1;margin-top:0}
+  header{order:2;margin-top:24px}
+  .story{order:3;margin-top:32px;position:relative}
+  .reel{order:4}
+  #process{order:5}
+  #standards{order:6}
+  footer{order:7}
+  .slide{display:flow-root;padding:28px 32px 36px}
+  .slide figure{float:right;width:45%;margin:20px 0 14px 32px}
+  .tx{margin-top:20px}
+  .sm{min-height:0}
+  .arr{display:flex;position:absolute;top:calc(50% - 20px);width:36px;height:36px;align-items:center;justify-content:center;border:0;border-radius:50%;background:var(--block);color:var(--deep);font-size:22px;line-height:1;padding-bottom:3px;transition:opacity .2s}
+  .arr:disabled{opacity:.35;cursor:default}
+  .arr.prev{left:-48px}
+  .arr.next{right:-48px}
+}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
 </style>
 </head>
@@ -190,6 +211,8 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
         </div>
       </article>
     </div>
+    <button class="arr prev" id="prev" aria-label="Trang trước">‹</button>
+    <button class="arr next" id="next" aria-label="Trang sau">›</button>
     <div class="dots" id="dots"></div>
   </section>
 
@@ -283,7 +306,11 @@ function initHero(list) {
     b.addEventListener('click', () => track.scrollTo({left: k * step(), behavior: reduce ? 'auto' : 'smooth'}));
     dots.appendChild(b);
   }
-  const mark = () => { const k = Math.min(n - 1, Math.max(0, Math.round(track.scrollLeft / step()))); [...dots.children].forEach((b, j) => b.classList.toggle('on', j === k)); };
+  let cur = 0;
+  const mark = () => { const k = Math.min(n - 1, Math.max(0, Math.round(track.scrollLeft / step()))); cur = k; [...dots.children].forEach((b, j) => b.classList.toggle('on', j === k)); $('#prev').disabled = k === 0; $('#next').disabled = k === n - 1; };
+  const go = k => track.scrollTo({left: Math.min(n - 1, Math.max(0, k)) * step(), behavior: reduce ? 'auto' : 'smooth'});
+  $('#prev').addEventListener('click', () => go(cur - 1));
+  $('#next').addEventListener('click', () => go(cur + 1));
   let raf; track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(mark); }, {passive: true});
   addEventListener('resize', mark);
   mark();
