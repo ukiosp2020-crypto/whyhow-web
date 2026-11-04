@@ -1,12 +1,57 @@
-{"steps":[
-{"title":"Khảo sát & định hình ý niệm","desc":"Phân tích hướng nắng gió, đo đạc hiện trạng, làm rõ bài toán ngân sách thực tế."},
-{"title":"Thiết kế kỹ thuật & dự toán","desc":"Mặt bằng công năng, phối cảnh ánh sáng, bóc tách khối lượng minh bạch."},
-{"title":"Thi công & giám sát hiện trường","desc":"Đội thợ chuẩn hóa tay nghề, báo cáo tiến độ kỹ thuật mỗi ngày."},
-{"title":"Bàn giao & bảo hành","desc":"Nghiệm thu theo hồ sơ thiết kế, bàn giao kèm hướng dẫn sử dụng và bảo trì."}
-],
-"pledges":[
-{"title":"Dự toán rõ từng hạng mục","desc":"Khối lượng được bóc tách trước khi ký, không phát sinh mơ hồ."},
-{"title":"Vật liệu đúng như hồ sơ","desc":"Chủng loại, quy cách và nguồn gốc ghi trong bản vẽ và bảng dự toán."},
-{"title":"Tiến độ minh bạch","desc":"Nhật ký thi công và hình ảnh hiện trường cập nhật hằng ngày."},
-{"title":"Một đầu mối chịu trách nhiệm","desc":"Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận."}
-]}
+{
+ "steps": [
+  {
+   "title": "Tiếp nhận & Lập nhiệm vụ thiết kế",
+   "summary": "Khảo sát hiện trạng, lắng nghe nhu cầu sử dụng và thống nhất ngân sách đầu tư dự kiến.",
+   "detail": "Giai đoạn đặt nền móng đầu tiên để tìm ra câu trả lời cho chữ WHY.\n\nChúng tôi trực tiếp khảo sát hiện trạng khu đất hoặc công trình: đo đạc kích thước, phân tích hướng nắng, hướng gió, vi khí hậu và bối cảnh xung quanh. Song song đó là những buổi trò chuyện sâu để lắng nghe thói quen sinh hoạt, cá tính của từng thành viên hoặc mô hình vận hành thực tế.\n\nKết thúc giai đoạn, hai bên thống nhất bài toán nhiệm vụ thiết kế, định hướng ngân sách đầu tư khả thi và ký hợp đồng tư vấn thiết kế."
+  },
+  {
+   "title": "Thiết kế ý tưởng",
+   "summary": "Đề xuất mặt bằng công năng 2D, định hướng vật liệu, phong cách và phối cảnh 3D sơ bộ.",
+   "detail": "Chuyển hóa những mong muốn chưa thành hình thành cấu trúc không gian cụ thể.\n\nKiến trúc sư đề xuất phương án mặt bằng công năng tổng thể (Layout 2D), tối ưu luồng di chuyển, độ thông thoáng tự nhiên và sự kết nối giữa con người với không gian.\n\nĐi kèm là bảng ý tưởng vật liệu, màu sắc, ánh sáng (Moodboard) và mô hình 3D sơ bộ, giúp chủ đầu tư hình dung rõ tinh thần và cảm xúc chủ đạo của công trình."
+  },
+  {
+   "title": "Thiết kế cơ sở",
+   "summary": "Hoàn thiện hình khối, chọn vật liệu, kết cấu – cơ điện sơ bộ và chốt phương án 3D.",
+   "detail": "Tinh chỉnh tỷ lệ kiến trúc và giải quyết các bài toán kỹ thuật cốt lõi.\n\nTừ phương án ý tưởng đã chọn, chúng tôi phát triển chi tiết toàn bộ không gian nội – ngoại thất, chốt chủng loại vật liệu thực tế và phương án chiếu sáng, đồng thời đưa ra giải pháp kết cấu, hệ thống cơ điện (M&E), cấp thoát nước và điều hòa không khí ở mức sơ bộ.\n\nKết quả là bộ phối cảnh 3D hoàn chỉnh, được hai bên phê duyệt trước khi triển khai bản vẽ kỹ thuật."
+  },
+  {
+   "title": "Thiết kế bản vẽ thi công",
+   "summary": "Triển khai hồ sơ kỹ thuật thi công đầy đủ và bảng bóc tách khối lượng (BOQ) chi tiết.",
+   "detail": "Hiện thực hóa chữ HOW bằng ngôn ngữ kỹ thuật chuẩn xác.\n\nHồ sơ thi công được triển khai chi tiết đến từng milimet, gồm hồ sơ kiến trúc, hồ sơ kết cấu, sơ đồ nguyên lý và bố trí hệ thống điện – nước – thông tin liên lạc (M&E), cùng bản vẽ cấu tạo từng hạng mục nội thất, đồ gỗ.\n\nĐi kèm là Bảng bóc tách khối lượng (BOQ) minh bạch, làm cơ sở đối chiếu cho báo giá và thi công tại hiện trường."
+  },
+  {
+   "title": "Báo giá & Ký hợp đồng thi công",
+   "summary": "Lập dự toán theo hồ sơ thiết kế, duyệt mẫu vật liệu thực tế và ký hợp đồng thi công.",
+   "detail": "Dựa trên BOQ và bản vẽ kỹ thuật, chúng tôi lập bảng dự toán chi tiết cho từng hạng mục, ghi rõ đơn giá, chủng loại, quy cách và xuất xứ vật tư, không phát sinh chi phí mơ hồ.\n\nChủ đầu tư trực tiếp duyệt mẫu vật liệu thực tế (gạch, đá, gỗ, sơn, thiết bị...), thống nhất tiến độ theo từng tuần, rồi ký hợp đồng thi công trọn gói."
+  },
+  {
+   "title": "Triển khai thi công & Lắp đặt",
+   "summary": "Thi công tại hiện trường, sản xuất nội thất tại xưởng, lắp đặt và giám sát tác giả.",
+   "detail": "Quá trình biến bản vẽ thành không gian sống thực thụ.\n\nĐội ngũ kỹ sư và thợ lành nghề trực tiếp triển khai từ phần thô, hạ tầng điện nước đến hoàn thiện bề mặt, và lắp đặt nội thất may đo sản xuất tại xưởng.\n\nKiến trúc sư giám sát tác giả định kỳ, kết hợp giám sát kỹ thuật tại hiện trường. Nhật ký thi công và hình ảnh thực tế được cập nhật mỗi ngày để công trình đạt độ chuẩn xác cao về cả kỹ thuật lẫn thẩm mỹ."
+  },
+  {
+   "title": "Nghiệm thu, Bàn giao & Bảo hành",
+   "summary": "Nghiệm thu đối chiếu hồ sơ thiết kế, vệ sinh, bàn giao và bảo hành định kỳ.",
+   "detail": "Trước khi trao chìa khóa, toàn bộ công trình được kiểm tra, chạy thử tải hệ thống điện nước và nghiệm thu từng chi tiết bề mặt, đối chiếu với hồ sơ thiết kế ban đầu.\n\nSau khi vệ sinh công nghiệp, chúng tôi bàn giao công trình kèm hồ sơ hoàn công và hướng dẫn vận hành, bảo trì vật liệu.\n\nWHY|HOW tiếp tục đồng hành cùng chủ đầu tư qua chế độ bảo hành kỹ thuật và hỗ trợ bảo trì lâu dài trong suốt quá trình sử dụng."
+  }
+ ],
+ "pledges": [
+  {
+   "title": "Dự toán rõ từng hạng mục",
+   "desc": "Khối lượng được bóc tách trước khi ký, không phát sinh mơ hồ."
+  },
+  {
+   "title": "Vật liệu đúng như hồ sơ",
+   "desc": "Chủng loại, quy cách và nguồn gốc ghi trong bản vẽ và bảng dự toán."
+  },
+  {
+   "title": "Tiến độ minh bạch",
+   "desc": "Nhật ký thi công và hình ảnh hiện trường cập nhật hằng ngày."
+  },
+  {
+   "title": "Một đầu mối chịu trách nhiệm",
+   "desc": "Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận."
+  }
+ ]
+}
