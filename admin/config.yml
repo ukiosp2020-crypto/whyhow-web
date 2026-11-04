@@ -85,13 +85,14 @@ collections:
         file: "content/process.json"
         format: json
         fields:
-          - label: "Các bước làm việc (thứ tự trong danh sách là thứ tự hiển thị)"
+          - label: "Các giai đoạn (kéo-thả để đổi thứ tự; số thứ tự 01, 02... tự đánh)"
             name: steps
             widget: list
             summary: "{{fields.title}}"
             fields:
-              - { label: "Tên bước", name: title, widget: string }
-              - { label: "Mô tả", name: desc, widget: text }
+              - { label: "Tiêu đề giai đoạn", name: title, widget: string }
+              - { label: "Ghi chú khái quát (hiện ngoài trang chủ)", name: summary, widget: text, hint: "Khoảng 90 ký tự để vừa đúng 2 dòng, dài hơn sẽ bị cắt bằng dấu …" }
+              - { label: "Nội dung chi tiết (hiện trong popup)", name: detail, widget: text, hint: "Cách một dòng trống để xuống đoạn mới" }
           - label: "Cam kết chất lượng"
             name: pledges
             widget: list
@@ -100,17 +101,54 @@ collections:
               - { label: "Tiêu đề cam kết", name: title, widget: string }
               - { label: "Nội dung", name: desc, widget: text }
 
-      # ---------- THÔNG TIN LIÊN HỆ (FOOTER) ----------
+      # ---------- THÔNG TIN LIÊN HỆ & MẠNG XÃ HỘI (FOOTER) ----------
       - name: contact
-        label: "Thông tin liên hệ (Footer)"
+        label: "Thông tin liên hệ & Mạng xã hội (Footer)"
         file: "content/contact.json"
         format: json
         fields:
           - { label: "Hotline", name: hotline, widget: string, hint: "Ví dụ: 0988 123 456" }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Địa chỉ studio", name: address, widget: string }
           - label: "Link Zalo"
             name: zalo
             widget: string
-            hint: "Dạng https://zalo.me/số-điện-thoại"
-            pattern: ['^https://zalo\.me/.+', "Link phải bắt đầu bằng https://zalo.me/"]
-          - { label: "Email", name: email, widget: string }
-          - { label: "Địa chỉ studio", name: address, widget: string }
+            required: false
+            hint: "Dạng https://zalo.me/số-điện-thoại. Để trống thì ẩn Zalo trên web."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "Facebook"
+            name: facebook
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "Instagram"
+            name: instagram
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "YouTube"
+            name: youtube
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "TikTok"
+            name: tiktok
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "Behance"
+            name: behance
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
+          - label: "Pinterest"
+            name: pinterest
+            widget: string
+            required: false
+            hint: "Dán link đầy đủ bắt đầu bằng https://. Để trống thì ẩn icon."
+            pattern: ['^https://\S+$', "Link phải bắt đầu bằng https://"]
