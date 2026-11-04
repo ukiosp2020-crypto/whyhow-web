@@ -93,13 +93,14 @@ collections:
               - { label: "Tiêu đề giai đoạn", name: title, widget: string }
               - { label: "Ghi chú khái quát (hiện ngoài trang chủ)", name: summary, widget: text, hint: "Khoảng 90 ký tự để vừa đúng 2 dòng, dài hơn sẽ bị cắt bằng dấu …" }
               - { label: "Nội dung chi tiết (hiện trong popup)", name: detail, widget: text, hint: "Cách một dòng trống để xuống đoạn mới" }
-          - label: "Cam kết chất lượng"
+          - label: "Cam kết chất lượng (kéo-thả để đổi thứ tự; số 01, 02... tự đánh)"
             name: pledges
             widget: list
             summary: "{{fields.title}}"
             fields:
               - { label: "Tiêu đề cam kết", name: title, widget: string }
-              - { label: "Nội dung", name: desc, widget: text }
+              - { label: "Ghi chú khái quát (hiện ngoài trang chủ)", name: summary, widget: text, hint: "Khoảng 90 ký tự để vừa đúng 2 dòng, dài hơn sẽ bị cắt bằng dấu …" }
+              - { label: "Nội dung chi tiết (hiện trong popup)", name: detail, widget: text, hint: "Cách một dòng trống để xuống đoạn mới" }
 
       # ---------- THÔNG TIN LIÊN HỆ & MẠNG XÃ HỘI (FOOTER) ----------
       - name: contact
