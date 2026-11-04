@@ -39,19 +39,23 @@
  "pledges": [
   {
    "title": "Dự toán rõ từng hạng mục",
-   "desc": "Khối lượng được bóc tách trước khi ký, không phát sinh mơ hồ."
+   "summary": "Khối lượng được bóc tách trước khi ký, không phát sinh mơ hồ.",
+   "detail": "Khối lượng được bóc tách trước khi ký hợp đồng, ghi rõ đơn giá, chủng loại, quy cách và xuất xứ vật tư.\n\nHai bên đối chiếu trên cùng một bảng dự toán, không phát sinh chi phí mơ hồ."
   },
   {
    "title": "Vật liệu đúng như hồ sơ",
-   "desc": "Chủng loại, quy cách và nguồn gốc ghi trong bản vẽ và bảng dự toán."
+   "summary": "Chủng loại, quy cách và nguồn gốc ghi trong bản vẽ và bảng dự toán.",
+   "detail": "Chủng loại, quy cách và nguồn gốc vật liệu được ghi trong bản vẽ và bảng dự toán.\n\nChủ đầu tư duyệt mẫu thực tế trước khi thi công, vật tư đưa vào công trình được đối chiếu theo đúng hồ sơ đã duyệt."
   },
   {
    "title": "Tiến độ minh bạch",
-   "desc": "Nhật ký thi công và hình ảnh hiện trường cập nhật hằng ngày."
+   "summary": "Nhật ký thi công và hình ảnh hiện trường cập nhật hằng ngày.",
+   "detail": "Nhật ký thi công và hình ảnh hiện trường được cập nhật hằng ngày.\n\nTiến độ được thống nhất theo từng tuần để chủ đầu tư luôn nắm rõ công trình đang ở bước nào."
   },
   {
    "title": "Một đầu mối chịu trách nhiệm",
-   "desc": "Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận."
+   "summary": "Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận.",
+   "detail": "Từ bản vẽ đến công trình hoàn thiện đều do cùng một đội đảm nhận, nên điều thiết kế vẽ ra là điều thi công làm được.\n\nKhi cần giải quyết vấn đề, chủ đầu tư chỉ làm việc với một đầu mối."
   }
  ]
 }
