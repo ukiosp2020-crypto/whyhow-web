@@ -1,6 +1,60 @@
-{"albums":[
-{"name":"Nhà phố Yên Lãng","location":"Hà Nội · 2024","description":"Giải phóng lõi thang bộ, đưa giếng trời và mảng xanh vào trung tâm để không khí đối lưu tự nhiên.","cover":"","photos":[]},
-{"name":"Penthouse Ecopark","location":"Ecopark · 2025","description":"Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.","cover":"","photos":[]},
-{"name":"Villa vườn Ba Vì","location":"Ba Vì · 2024","description":"Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.","cover":"","photos":[]},
-{"name":"The Concrete House","location":"Hà Nội · 2024","description":"Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.","cover":"","photos":[]}
-]}
+{
+ "albums": [
+  {
+   "name": "Nhà phố Yên Lãng",
+   "location": "Hà Nội · 2024",
+   "description": "Giải phóng lõi thang bộ, đưa giếng trời và mảng xanh vào trung tâm để không khí đối lưu tự nhiên.",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Penthouse Ecopark",
+   "location": "Ecopark · 2025",
+   "description": "Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Villa vườn Ba Vì",
+   "location": "Ba Vì · 2024",
+   "description": "Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "The Concrete House",
+   "location": "Hà Nội · 2024",
+   "description": "Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Project 5",
+   "location": "Chưa cập nhật",
+   "description": "",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Project 6",
+   "location": "Chưa cập nhật",
+   "description": "",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Project 7",
+   "location": "Chưa cập nhật",
+   "description": "",
+   "cover": "",
+   "photos": []
+  },
+  {
+   "name": "Project 8",
+   "location": "Chưa cập nhật",
+   "description": "",
+   "cover": "",
+   "photos": []
+  }
+ ]
+}
