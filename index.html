@@ -54,9 +54,12 @@ header{text-align:center}
 .dots button.on{width:22px;background:var(--deep)}
 
 /* Reel */
-.reel{display:flex;gap:10px;margin-top:40px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-bottom:2px}
+.reelwrap{margin-top:40px}
+.rbox{position:relative}
+.reel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .reel::-webkit-scrollbar{display:none}
-.tile{flex:0 0 calc((100% - 30px)/4);scroll-snap-align:start;background:none;border:0;padding:0;text-align:left;min-width:0}
+.rpage{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 10px;align-content:start}
+.tile{background:none;border:0;padding:0;text-align:left;min-width:0}
 .tile i{display:block;aspect-ratio:1;border-radius:14px;transition:transform .2s}
 .tile:active i{transform:scale(.96)}
 .tile span{display:block;margin-top:6px;font-size:11px;line-height:1.35;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -126,7 +129,7 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
   .hero{order:1;margin-top:0}
   header{order:2;margin-top:24px}
   .story{order:3;margin-top:32px;position:relative}
-  .reel{order:4}
+  .reelwrap{order:4}
   #process{order:5}
   #standards{order:6}
   footer{order:7}
@@ -137,6 +140,7 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
   .arr{display:flex;position:absolute;top:calc(50% - 20px);width:36px;height:36px;align-items:center;justify-content:center;border:0;border-radius:50%;background:var(--block);color:var(--deep);font-size:22px;line-height:1;padding-bottom:3px;transition:opacity .2s}
   .arr:disabled{opacity:.35;cursor:default}
   .arr.prev{left:-48px}
+  .rbox .arr{top:calc(50% - 18px)}
   .arr.next{right:-48px}
 }
 
@@ -218,7 +222,14 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
   </section>
 
   <!-- Portfolio reel -->
-  <section class="reel" id="reel" aria-label="Album công trình"></section>
+  <section class="reelwrap" aria-label="Album công trình">
+    <div class="rbox">
+      <div class="reel" id="reel"></div>
+      <button class="arr prev" id="rprev" aria-label="Album trước" hidden>‹</button>
+      <button class="arr next" id="rnext" aria-label="Album sau" hidden>›</button>
+    </div>
+    <div class="dots" id="rdots" hidden></div>
+  </section>
 
   <!-- Process -->
   <section class="sec" id="process">
@@ -274,7 +285,11 @@ let ALBUMS = [
   {name:'Nhà phố Yên Lãng', meta:'Hà Nội · 2024', desc:'Giải phóng lõi thang bộ, đưa giếng trời và mảng xanh vào trung tâm để không khí đối lưu tự nhiên.', cover:'', photos:['','','']},
   {name:'Penthouse Ecopark', meta:'Ecopark · 2025', desc:'Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.', cover:'', photos:['','','']},
   {name:'Villa vườn Ba Vì', meta:'Ba Vì · 2024', desc:'Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.', cover:'', photos:['','','']},
-  {name:'The Concrete House', meta:'Hà Nội · 2024', desc:'Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.', cover:'', photos:['','','']}
+  {name:'The Concrete House', meta:'Hà Nội · 2024', desc:'Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.', cover:'', photos:['','','']},
+  {name:'Project 5', meta:'', desc:'', cover:'', photos:[]},
+  {name:'Project 6', meta:'', desc:'', cover:'', photos:[]},
+  {name:'Project 7', meta:'', desc:'', cover:'', photos:[]},
+  {name:'Project 8', meta:'', desc:'', cover:'', photos:[]}
 ];
 /* ================================================================================ */
 
@@ -321,19 +336,43 @@ function initHero(list) {
 (function () {
   const reel = $('#reel'), bg = $('#bg');
   let lastFocus = null;
-  function renderReel() {
-  reel.innerHTML = '';
-  ALBUMS.forEach((a, k) => {
-    const t = document.createElement('button');
-    t.className = 'tile';
-    t.setAttribute('aria-label', 'Xem album ' + a.name);
-    const i = document.createElement('i'); setBg(i, a.cover);
-    const s = document.createElement('span'); s.textContent = a.name;
-    t.append(i, s);
-    t.addEventListener('click', () => open(k, t));
-    reel.appendChild(t);
-  });
+  const rdots = $('#rdots'), rprev = $('#rprev'), rnext = $('#rnext');
+  let pages = 1, cur = 0;
+  const rstep = () => reel.clientWidth;
+  const rgo = k => reel.scrollTo({left: Math.min(pages - 1, Math.max(0, k)) * rstep(), behavior: reduce ? 'auto' : 'smooth'});
+  function rmark() {
+    cur = Math.min(pages - 1, Math.max(0, Math.round(reel.scrollLeft / (rstep() || 1))));
+    [...rdots.children].forEach((b, j) => b.classList.toggle('on', j === cur));
+    rprev.disabled = cur === 0; rnext.disabled = cur === pages - 1;
   }
+  function renderReel() {
+    reel.innerHTML = ''; rdots.innerHTML = '';
+    pages = Math.max(1, Math.ceil(ALBUMS.length / 8));
+    for (let g = 0; g < pages; g++) {
+      const page = document.createElement('div'); page.className = 'rpage';
+      ALBUMS.slice(g * 8, g * 8 + 8).forEach((a, j) => {
+        const k = g * 8 + j;
+        const t = document.createElement('button');
+        t.className = 'tile';
+        t.setAttribute('aria-label', 'Xem album ' + a.name);
+        const i = document.createElement('i'); setBg(i, a.cover);
+        const s = document.createElement('span'); s.textContent = a.name;
+        t.append(i, s);
+        t.addEventListener('click', () => open(k, t));
+        page.appendChild(t);
+      });
+      reel.appendChild(page);
+      const d = document.createElement('button'); d.setAttribute('aria-label', 'Trang album ' + (g + 1));
+      d.addEventListener('click', () => rgo(g)); rdots.appendChild(d);
+    }
+    const multi = pages > 1;
+    rdots.hidden = !multi; rprev.hidden = !multi; rnext.hidden = !multi;
+    reel.scrollLeft = 0; rmark();
+  }
+  rprev.addEventListener('click', () => rgo(cur - 1));
+  rnext.addEventListener('click', () => rgo(cur + 1));
+  let rraf; reel.addEventListener('scroll', () => { cancelAnimationFrame(rraf); rraf = requestAnimationFrame(rmark); }, {passive: true});
+  addEventListener('resize', rmark);
   window.renderReel = renderReel;
   renderReel();
   function open(k, from) {
