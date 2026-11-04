@@ -99,6 +99,25 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
 .pics div:first-child{grid-column:1/-1;aspect-ratio:16/9}
 .cta{display:block;margin-top:18px;padding:12px;border-radius:12px;background:var(--deep);color:var(--bg);text-align:center;text-decoration:none;font-weight:500}
 
+/* Quy trình dạng danh sách bấm được + popup */
+[hidden]{display:none!important}
+.steps li{display:block;padding:0}
+.step{display:grid;grid-template-columns:32px 1fr 20px;gap:6px;align-items:start;width:100%;padding:14px 0;background:none;border:0;text-align:left;color:inherit}
+.step .n{color:var(--ink2);font-weight:500;font-variant-numeric:tabular-nums}
+.step b{display:block;font-weight:500;color:var(--deep)}
+.sm{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;min-height:3.2em;margin-top:2px;font-size:13px;color:var(--ink2)}
+.plus{font-size:18px;line-height:1.3;text-align:right;color:var(--ink2)}
+.pbg{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(40,36,31,.5);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.pbg.open{opacity:1;visibility:visible}
+.pm{width:min(600px,90vw);height:min(460px,85vh);display:flex;flex-direction:column;overflow:hidden;background:var(--bg);border-radius:16px;transform:translateY(8px);transition:transform .25s}
+.pbg.open .pm{transform:none}
+.pm-h{flex:none;display:flex;align-items:center;gap:12px;padding:18px 18px 14px 24px;border-bottom:1px solid var(--line)}
+.pm-h .n{color:var(--ink2);font-weight:500;font-variant-numeric:tabular-nums}
+.pm-h h3{flex:1;font-size:18px;font-weight:600;line-height:1.35;color:var(--deep)}
+.pm-b{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:18px 24px 24px}
+.pm-b p{line-height:1.85}.pm-b p+p{margin-top:12px}
+@media (max-width:640px){.pm{width:90vw;height:70vh}}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
 </style>
 </head>
@@ -180,12 +199,7 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
   <!-- Process -->
   <section class="sec" id="process">
     <h2>Quy trình làm việc</h2>
-    <ol class="list" id="steps">
-      <li><span class="n">1</span><div><b>Khảo sát & định hình ý niệm</b><p>Phân tích hướng nắng gió, đo đạc hiện trạng, làm rõ bài toán ngân sách thực tế.</p></div></li>
-      <li><span class="n">2</span><div><b>Thiết kế kỹ thuật & dự toán</b><p>Mặt bằng công năng, phối cảnh ánh sáng, bóc tách khối lượng minh bạch.</p></div></li>
-      <li><span class="n">3</span><div><b>Thi công & giám sát hiện trường</b><p>Đội thợ chuẩn hóa tay nghề, báo cáo tiến độ kỹ thuật mỗi ngày.</p></div></li>
-      <li><span class="n">4</span><div><b>Bàn giao & bảo hành</b><p>Nghiệm thu theo hồ sơ thiết kế, bàn giao kèm hướng dẫn sử dụng và bảo trì.</p></div></li>
-    </ol>
+    <ol class="list steps" id="steps"></ol>
   </section>
 
   <!-- Standards -->
@@ -201,20 +215,23 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
 
   <!-- Footer -->
   <footer>
-    <div class="soc">
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97v7.55c0 1.6-.45 3.2-1.39 4.51-1.63 2.29-4.42 3.5-7.22 3.19-2.73-.3-5.06-2.13-5.99-4.71-.93-2.58-.2-5.54 1.83-7.42 1.85-1.72 4.55-2.22 6.9-1.28v4.18c-.89-.48-1.95-.57-2.91-.25-1.16.39-1.99 1.48-2.07 2.72-.09 1.34.72 2.62 1.96 3.12 1.18.48 2.59.24 3.52-.61.64-.58.98-1.41.98-2.28V.02h-.02z"/></svg></a>
-      <a href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer" aria-label="Zalo">Zalo</a>
-    </div>
+    <div class="soc" id="soc" hidden></div>
     <div class="ct">
       <p id="c-hot">Hotline: <a href="tel:0988000000">0988.xxx.xxx</a></p>
-      <p id="c-zalo">Zalo: <a href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer">zalo.me/0988000000</a></p>
+      <p id="c-zalo" hidden>Zalo: <a href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer">zalo.me/0988000000</a></p>
       <p id="c-mail">Email: <a href="mailto:contact@whyhow.vn">contact@whyhow.vn</a></p>
       <p id="c-addr">Hà Nội, Việt Nam</p>
     </div>
     <p class="copy">© 2026 WHY|HOW. Bảo lưu mọi quyền.</p>
   </footer>
+</div>
+
+<!-- Popup giai đoạn quy trình -->
+<div class="pbg" id="pbg" aria-hidden="true">
+  <div class="pm" role="dialog" aria-modal="true" aria-labelledby="pm-t">
+    <div class="pm-h"><span class="n" id="pm-n"></span><h3 id="pm-t"></h3><button class="x" id="pm-x" aria-label="Đóng">×</button></div>
+    <div class="pm-b" id="pm-b"></div>
+  </div>
 </div>
 
 <!-- Bottom sheet -->
@@ -227,7 +244,7 @@ footer{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);text-al
     </div>
     <p class="desc" id="sh-d"></p>
     <div class="pics" id="sh-p"></div>
-    <a class="cta" href="https://zalo.me/0988000000" target="_blank" rel="noopener noreferrer">Trao đổi qua Zalo</a>
+    <a class="cta" id="sh-cta" hidden href="#" target="_blank" rel="noopener noreferrer">Trao đổi qua Zalo</a>
   </div>
 </div>
 
@@ -318,6 +335,42 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const getJSON = n => fetch('content/' + n + '.json', {cache: 'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null);
 const paras = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join('');
 
+/* ===== QUY TRÌNH (tự đánh số theo vị trí) + POPUP ===== */
+const STEPS_DEFAULT = [{"title": "Tiếp nhận & Lập nhiệm vụ thiết kế", "summary": "Khảo sát hiện trạng, lắng nghe nhu cầu sử dụng và thống nhất ngân sách đầu tư dự kiến.", "detail": "Giai đoạn đặt nền móng đầu tiên để tìm ra câu trả lời cho chữ WHY.\n\nChúng tôi trực tiếp khảo sát hiện trạng khu đất hoặc công trình: đo đạc kích thước, phân tích hướng nắng, hướng gió, vi khí hậu và bối cảnh xung quanh. Song song đó là những buổi trò chuyện sâu để lắng nghe thói quen sinh hoạt, cá tính của từng thành viên hoặc mô hình vận hành thực tế.\n\nKết thúc giai đoạn, hai bên thống nhất bài toán nhiệm vụ thiết kế, định hướng ngân sách đầu tư khả thi và ký hợp đồng tư vấn thiết kế."}, {"title": "Thiết kế ý tưởng", "summary": "Đề xuất mặt bằng công năng 2D, định hướng vật liệu, phong cách và phối cảnh 3D sơ bộ.", "detail": "Chuyển hóa những mong muốn chưa thành hình thành cấu trúc không gian cụ thể.\n\nKiến trúc sư đề xuất phương án mặt bằng công năng tổng thể (Layout 2D), tối ưu luồng di chuyển, độ thông thoáng tự nhiên và sự kết nối giữa con người với không gian.\n\nĐi kèm là bảng ý tưởng vật liệu, màu sắc, ánh sáng (Moodboard) và mô hình 3D sơ bộ, giúp chủ đầu tư hình dung rõ tinh thần và cảm xúc chủ đạo của công trình."}, {"title": "Thiết kế cơ sở", "summary": "Hoàn thiện hình khối, chọn vật liệu, kết cấu – cơ điện sơ bộ và chốt phương án 3D.", "detail": "Tinh chỉnh tỷ lệ kiến trúc và giải quyết các bài toán kỹ thuật cốt lõi.\n\nTừ phương án ý tưởng đã chọn, chúng tôi phát triển chi tiết toàn bộ không gian nội – ngoại thất, chốt chủng loại vật liệu thực tế và phương án chiếu sáng, đồng thời đưa ra giải pháp kết cấu, hệ thống cơ điện (M&E), cấp thoát nước và điều hòa không khí ở mức sơ bộ.\n\nKết quả là bộ phối cảnh 3D hoàn chỉnh, được hai bên phê duyệt trước khi triển khai bản vẽ kỹ thuật."}, {"title": "Thiết kế bản vẽ thi công", "summary": "Triển khai hồ sơ kỹ thuật thi công đầy đủ và bảng bóc tách khối lượng (BOQ) chi tiết.", "detail": "Hiện thực hóa chữ HOW bằng ngôn ngữ kỹ thuật chuẩn xác.\n\nHồ sơ thi công được triển khai chi tiết đến từng milimet, gồm hồ sơ kiến trúc, hồ sơ kết cấu, sơ đồ nguyên lý và bố trí hệ thống điện – nước – thông tin liên lạc (M&E), cùng bản vẽ cấu tạo từng hạng mục nội thất, đồ gỗ.\n\nĐi kèm là Bảng bóc tách khối lượng (BOQ) minh bạch, làm cơ sở đối chiếu cho báo giá và thi công tại hiện trường."}, {"title": "Báo giá & Ký hợp đồng thi công", "summary": "Lập dự toán theo hồ sơ thiết kế, duyệt mẫu vật liệu thực tế và ký hợp đồng thi công.", "detail": "Dựa trên BOQ và bản vẽ kỹ thuật, chúng tôi lập bảng dự toán chi tiết cho từng hạng mục, ghi rõ đơn giá, chủng loại, quy cách và xuất xứ vật tư, không phát sinh chi phí mơ hồ.\n\nChủ đầu tư trực tiếp duyệt mẫu vật liệu thực tế (gạch, đá, gỗ, sơn, thiết bị...), thống nhất tiến độ theo từng tuần, rồi ký hợp đồng thi công trọn gói."}, {"title": "Triển khai thi công & Lắp đặt", "summary": "Thi công tại hiện trường, sản xuất nội thất tại xưởng, lắp đặt và giám sát tác giả.", "detail": "Quá trình biến bản vẽ thành không gian sống thực thụ.\n\nĐội ngũ kỹ sư và thợ lành nghề trực tiếp triển khai từ phần thô, hạ tầng điện nước đến hoàn thiện bề mặt, và lắp đặt nội thất may đo sản xuất tại xưởng.\n\nKiến trúc sư giám sát tác giả định kỳ, kết hợp giám sát kỹ thuật tại hiện trường. Nhật ký thi công và hình ảnh thực tế được cập nhật mỗi ngày để công trình đạt độ chuẩn xác cao về cả kỹ thuật lẫn thẩm mỹ."}, {"title": "Nghiệm thu, Bàn giao & Bảo hành", "summary": "Nghiệm thu đối chiếu hồ sơ thiết kế, vệ sinh, bàn giao và bảo hành định kỳ.", "detail": "Trước khi trao chìa khóa, toàn bộ công trình được kiểm tra, chạy thử tải hệ thống điện nước và nghiệm thu từng chi tiết bề mặt, đối chiếu với hồ sơ thiết kế ban đầu.\n\nSau khi vệ sinh công nghiệp, chúng tôi bàn giao công trình kèm hồ sơ hoàn công và hướng dẫn vận hành, bảo trì vật liệu.\n\nWHY|HOW tiếp tục đồng hành cùng chủ đầu tư qua chế độ bảo hành kỹ thuật và hỗ trợ bảo trì lâu dài trong suốt quá trình sử dụng."}];
+let STEPS = [];
+const pad2 = i => String(i + 1).padStart(2, '0');
+function renderSteps(list) {
+  STEPS = list;
+  $('#steps').innerHTML = list.map((s, i) => `<li><button class="step" data-i="${i}" aria-haspopup="dialog"><span class="n">${pad2(i)}</span><span><b>${esc(s.title)}</b><span class="sm">${esc(s.summary || s.desc || '')}</span></span><span class="plus" aria-hidden="true">+</span></button></li>`).join('');
+}
+(function () {
+  const bg = $('#pbg'); let from = null;
+  $('#steps').addEventListener('click', e => {
+    const b = e.target.closest('.step'); if (!b) return;
+    const i = +b.dataset.i, s = STEPS[i]; from = b;
+    $('#pm-n').textContent = pad2(i); $('#pm-t').textContent = s.title;
+    const body = $('#pm-b'); body.innerHTML = paras(s.detail || s.summary || ''); body.scrollTop = 0;
+    bg.classList.add('open'); bg.setAttribute('aria-hidden', 'false'); document.body.classList.add('lock'); $('#pm-x').focus();
+  });
+  const close = () => { bg.classList.remove('open'); bg.setAttribute('aria-hidden', 'true'); document.body.classList.remove('lock'); if (from) from.focus(); };
+  $('#pm-x').addEventListener('click', close);
+  bg.addEventListener('click', e => { if (e.target === bg) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && bg.classList.contains('open')) close(); });
+})();
+renderSteps(STEPS_DEFAULT);
+
+/* ===== MẠNG XÃ HỘI: chỉ hiện kênh có link https:// hợp lệ ===== */
+const SOC = [{"k": "facebook", "n": "Facebook", "svg": "<path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/>"}, {"k": "instagram", "n": "Instagram", "svg": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"17.2\" cy=\"6.8\" r=\"1.2\"/>"}, {"k": "youtube", "n": "YouTube", "svg": "<path d=\"M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z\"/>"}, {"k": "tiktok", "n": "TikTok", "svg": "<path d=\"M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97v7.55c0 1.6-.45 3.2-1.39 4.51-1.63 2.29-4.42 3.5-7.22 3.19-2.73-.3-5.06-2.13-5.99-4.71-.93-2.58-.2-5.54 1.83-7.42 1.85-1.72 4.55-2.22 6.9-1.28v4.18c-.89-.48-1.95-.57-2.91-.25-1.16.39-1.99 1.48-2.07 2.72-.09 1.34.72 2.62 1.96 3.12 1.18.48 2.59.24 3.52-.61.64-.58.98-1.41.98-2.28V.02h-.02z\"/>"}, {"k": "behance", "n": "Behance", "t": "Be"}, {"k": "pinterest", "n": "Pinterest", "t": "Pin"}, {"k": "zalo", "n": "Zalo", "t": "Zalo"}];
+const okLink = u => typeof u === 'string' && u.trim() !== '#' && /^https:\/\/\S+$/i.test(u.trim());
+function renderSocial(c) {
+  const on = SOC.filter(x => okLink(c[x.k])), box = $('#soc');
+  box.innerHTML = on.map(x => `<a href="${esc(c[x.k].trim())}" target="_blank" rel="noopener noreferrer" aria-label="${x.n}">${x.svg ? `<svg viewBox="0 0 24 24">${x.svg}</svg>` : x.t}</a>`).join('');
+  box.hidden = !on.length;
+  const z = okLink(c.zalo);
+  $('#c-zalo').hidden = !z; $('#sh-cta').hidden = !z;
+  if (z) { const u = c.zalo.trim(); $('#c-zalo a').href = u; $('#c-zalo a').textContent = u.replace(/^https:\/\//, ''); $('#sh-cta').href = u; }
+}
+
 (async function () {
   const [story, albums, process, contact, heroData, headerData] = await Promise.all(['story', 'albums', 'process', 'contact', 'hero', 'header'].map(getJSON));
   initHero(heroData && heroData.images && heroData.images.length ? heroData.images : HERO);
@@ -342,19 +395,15 @@ const paras = t => String(t || '').split(/\n\s*\n/).map(x => x.trim()).filter(Bo
     window.renderReel();
   }
 
-  if (process && process.steps && process.steps.length)
-    $('#steps').innerHTML = process.steps.map((s, i) => `<li><span class="n">${i + 1}</span><div><b>${esc(s.title)}</b><p>${esc(s.desc)}</p></div></li>`).join('');
+  if (process && process.steps && process.steps.length) renderSteps(process.steps);
   if (process && process.pledges && process.pledges.length)
     $('#pledges').innerHTML = process.pledges.map(s => `<li><div><b>${esc(s.title)}</b><p>${esc(s.desc)}</p></div></li>`).join('');
 
   if (contact) {
     if (contact.hotline) { const a = $('#c-hot a'); a.textContent = contact.hotline; a.href = 'tel:' + contact.hotline.replace(/[^\d+]/g, ''); }
-    if (/^https:\/\/zalo\.me\//.test(contact.zalo || '')) {
-      document.querySelectorAll('a[href^="https://zalo.me/"]').forEach(a => a.href = contact.zalo);
-      $('#c-zalo a').textContent = contact.zalo.replace(/^https:\/\//, '');
-    }
     if (contact.email) { const a = $('#c-mail a'); a.textContent = contact.email; a.href = 'mailto:' + contact.email; }
     if (contact.address) $('#c-addr').textContent = contact.address;
+    renderSocial(contact);
   }
 })();
 </script>
