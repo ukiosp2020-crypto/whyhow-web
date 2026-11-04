@@ -73,11 +73,14 @@ collections:
               - { label: "Địa điểm", name: location, widget: string, hint: "Ví dụ: Hà Nội · 2024" }
               - { label: "Mô tả ngắn", name: description, widget: text, required: false }
               - { label: "Ảnh đại diện (vuông)", name: cover, widget: image }
-              - label: "Bộ ảnh chi tiết"
-                name: photos
+              - label: "Thư viện ảnh (không giới hạn số ảnh, kéo-thả để đổi thứ tự)"
+                name: gallery
                 widget: list
                 required: false
-                field: { label: "Ảnh", name: image, widget: image }
+                summary: "{{fields.image}}"
+                fields:
+                  - { label: "Ảnh", name: image, widget: image }
+                  - { label: "Chú thích (để trống nếu không cần)", name: caption, widget: text, required: false }
 
       # ---------- KHỐI QUY TRÌNH & CAM KẾT ----------
       - name: process
