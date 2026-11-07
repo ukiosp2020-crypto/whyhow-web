@@ -1,60 +1,74 @@
 {
- "albums": [
-  {
-   "name": "Nhà phố Yên Lãng",
-   "location": "Hà Nội · 2024",
-   "description": "Giải phóng lõi thang bộ, đưa giếng trời và mảng xanh vào trung tâm để không khí đối lưu tự nhiên.",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Penthouse Ecopark",
-   "location": "Ecopark · 2025",
-   "description": "Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Villa vườn Ba Vì",
-   "location": "Ba Vì · 2024",
-   "description": "Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "The Concrete House",
-   "location": "Hà Nội · 2024",
-   "description": "Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Project 5",
-   "location": "Chưa cập nhật",
-   "description": "",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Project 6",
-   "location": "Chưa cập nhật",
-   "description": "",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Project 7",
-   "location": "Chưa cập nhật",
-   "description": "",
-   "cover": "",
-   "photos": []
-  },
-  {
-   "name": "Project 8",
-   "location": "Chưa cập nhật",
-   "description": "",
-   "cover": "",
-   "photos": []
-  }
- ]
+  "albums": [
+    {
+      "name": "Căn hộ Hei Tower ",
+      "location": "Hà Nội · 2026",
+      "description": "Căn hộ 70m² ở tầng thương mại chuyển đổi, mặt bằng rời rạc, hành lang thừa, ban công duy nhất bị bỏ phí. Ngân sách có hạn, chúng tôi chủ động hạ nhẹ chuẩn vật liệu và thiết bị, dồn chi phí cho thứ khó sửa về sau: mặt bằng. Giữ nguyên bếp, khu giặt sấy chuyển vào trong nhà, tận dụng đường cấp nước bếp và đường thoát WC master. Một cánh lớn kéo mở khi dùng, đóng lại thì cả khu giặt sấy khuất khỏi tầm nhìn. Ban công trở lại làm khoảng thở, cục nóng điều hòa được treo dọc vào góc khuất. Phòng master mở rộng WC, đổi hướng cửa tạo khoảng đệm, cửa mở vẫn giữ riêng tư cho giường ngủ.",
+      "cover": "/assets/uploads/ALbumHei2.jpeg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/ALbumHei3.jpeg"
+        },
+        {
+          "image": "/assets/uploads/ALbumHei4.jpeg"
+        },
+        {
+          "image": "/assets/uploads/ALbumHei5.jpeg"
+        },
+        {
+          "image": "/assets/uploads/AlbumHei6.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Penthouse Ecopark",
+      "location": "Ecopark · 2025",
+      "description": "Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "Villa vườn Ba Vì",
+      "location": "Ba Vì · 2024",
+      "description": "Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "The Concrete House",
+      "location": "Hà Nội · 2024",
+      "description": "Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "Project 5",
+      "location": "Chưa cập nhật",
+      "description": "",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "Project 6",
+      "location": "Chưa cập nhật",
+      "description": "",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "Project 7",
+      "location": "Chưa cập nhật",
+      "description": "",
+      "cover": "",
+      "photos": []
+    },
+    {
+      "name": "Project 8",
+      "location": "Chưa cập nhật",
+      "description": "",
+      "cover": "",
+      "photos": []
+    }
+  ]
 }
