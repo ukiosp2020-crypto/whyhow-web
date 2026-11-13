@@ -25,23 +25,43 @@
       ]
     },
     {
-      "name": "Penthouse Ecopark",
-      "location": "Ecopark · 2025",
-      "description": "Không gian mở không vách ngăn cố định, tối ưu tầm nhìn ra mặt hồ với vách trượt âm tường.",
+      "name": "Nhà gia đình bác Thắng",
+      "location": "Ngoại ô Hà Nội · 2022",
+      "description": "Nhà nằm trong một ngõ nhỏ ngoại ô Hà Nội, đất 130m², phải đủ chỗ cho ba gia đình nhỏ trong một đại gia đình. Gia chủ muốn mọi sinh hoạt hướng vào trong để giữ riêng tư tối đa. Chúng tôi lấy giếng trời và một khoảng sân trong nhỏ làm lõi: nắng và gió vào nhà từ đó, không phải mở ra phía ngõ. Mỗi tầng đều có một không gian sinh hoạt chung để các gia đình gặp nhau mà không lấn vào phòng riêng. Càng lên cao, tầm nhìn càng mở. Ngôn ngữ tối giản, ưu tiên nắng và gió. Thiết kế đầu năm 2021, khởi công đầu năm 2022.",
+      "cover": "/assets/uploads/album-nha-bac-thang-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-04.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-05.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-06.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Project 3",
+      "location": "Chưa cập nhật",
+      "description": "",
       "cover": "",
       "photos": []
     },
     {
-      "name": "Villa vườn Ba Vì",
-      "location": "Ba Vì · 2024",
-      "description": "Khối một tầng trải dài, móng đá hộc địa phương kết hợp vì kèo thép khẩu độ lớn.",
-      "cover": "",
-      "photos": []
-    },
-    {
-      "name": "The Concrete House",
-      "location": "Hà Nội · 2024",
-      "description": "Bê tông trần, kính và ánh sáng tự nhiên: vật liệu được để lộ đúng bản chất.",
+      "name": "Project 4",
+      "location": "Chưa cập nhật",
+      "description": "",
       "cover": "",
       "photos": []
     },
