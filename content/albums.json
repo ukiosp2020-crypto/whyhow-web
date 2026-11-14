@@ -25,16 +25,48 @@
         },
         {
           "image": "/assets/uploads/album-nha-bac-thang-06.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-07.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-08.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-09.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-10.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-11.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-bac-thang-12.jpg"
         }
       ]
     },
     {
       "category": "kien-truc",
-      "name": "Project 3",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Cafe Koi",
+      "location": "Tĩnh Gia, Thanh Hóa · 2025",
+      "description": "Cải tạo một căn nhà phố ở Tĩnh Gia, Thanh Hóa thành quán cà phê, chỉ giữ lại phần khung, diện tích khoảng 30m². Chủ đầu tư cần một chỗ dừng chân yên tĩnh, có cây và mặt nước, đủ rộng cho khách đi nhóm nhưng vẫn có góc riêng cho người đi một mình. Chúng tôi lấy gỗ và mặt nước làm chủ đạo, kéo liền từ ngoài vào trong để nối hai không gian thành một. Bên trong vẫn che được nắng hè, gió đông, khách ngồi trong vẫn nhìn thấy cảnh quan bên ngoài.",
+      "cover": "/assets/uploads/album-cafe-koi-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-cafe-koi-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-cafe-koi-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-cafe-koi-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-cafe-koi-04.jpg"
+        }
+      ]
     },
     {
       "category": "kien-truc",
