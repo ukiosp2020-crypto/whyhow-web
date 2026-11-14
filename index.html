@@ -59,6 +59,8 @@ header{text-align:center}
 .reel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .reel::-webkit-scrollbar{display:none}
 .rpage{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 10px;align-content:start}
+.rlab{grid-column:1/-1;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.rlab~.rlab{margin-top:8px}
 .tile{background:none;border:0;padding:0;text-align:left;min-width:0}
 .tile i{display:block;aspect-ratio:1;border-radius:14px;transition:transform .2s}
 .tile:active i{transform:scale(.96)}
@@ -347,19 +349,30 @@ function initHero(list) {
   }
   function renderReel() {
     reel.innerHTML = ''; rdots.innerHTML = '';
-    pages = Math.max(1, Math.ceil(ALBUMS.length / 8));
+    const idx = ALBUMS.map((a, k) => k);
+    const ROWS = [
+      {label: 'Kiến trúc', list: idx.filter(k => ALBUMS[k].cat !== 'noi-that')},
+      {label: 'Nội thất', list: idx.filter(k => ALBUMS[k].cat === 'noi-that')}
+    ];
+    pages = Math.max(1, ...ROWS.map(r => Math.ceil(r.list.length / 4)));
     for (let g = 0; g < pages; g++) {
       const page = document.createElement('div'); page.className = 'rpage';
-      ALBUMS.slice(g * 8, g * 8 + 8).forEach((a, j) => {
-        const k = g * 8 + j;
-        const t = document.createElement('button');
-        t.className = 'tile';
-        t.setAttribute('aria-label', 'Xem album ' + a.name);
-        const i = document.createElement('i'); setBg(i, a.cover);
-        const s = document.createElement('span'); s.textContent = a.name;
-        t.append(i, s);
-        t.addEventListener('click', () => open(k, t));
-        page.appendChild(t);
+      ROWS.forEach(r => {
+        const part = r.list.slice(g * 4, g * 4 + 4);
+        if (!part.length) return;
+        const h = document.createElement('div'); h.className = 'rlab'; h.textContent = r.label;
+        page.appendChild(h);
+        part.forEach(k => {
+          const a = ALBUMS[k];
+          const t = document.createElement('button');
+          t.className = 'tile';
+          t.setAttribute('aria-label', 'Xem album ' + a.name);
+          const i = document.createElement('i'); setBg(i, a.cover);
+          const s = document.createElement('span'); s.textContent = a.name;
+          t.append(i, s);
+          t.addEventListener('click', () => open(k, t));
+          page.appendChild(t);
+        });
       });
       reel.appendChild(page);
       const d = document.createElement('button'); d.setAttribute('aria-label', 'Trang album ' + (g + 1));
@@ -468,7 +481,7 @@ function renderSocial(c) {
   }
 
   if (albums && albums.albums && albums.albums.length) {
-    ALBUMS = albums.albums.map(a => ({name: a.name, meta: a.location, desc: a.description || '', cover: a.cover || '', photos: (a.gallery || a.photos || []).map(x => typeof x === 'string' ? {image: x} : x)}));
+    ALBUMS = albums.albums.map(a => ({cat: a.category || 'kien-truc', name: a.name, meta: a.location, desc: a.description || '', cover: a.cover || '', photos: (a.gallery || a.photos || []).map(x => typeof x === 'string' ? {image: x} : x)}));
     window.renderReel();
   }
 

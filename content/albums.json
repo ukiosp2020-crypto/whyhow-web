@@ -1,30 +1,7 @@
 {
   "albums": [
     {
-      "name": "Căn hộ Hei Tower ",
-      "location": "Hà Nội · 2026",
-      "description": "Căn hộ 70m² ở tầng thương mại chuyển đổi, mặt bằng rời rạc, hành lang thừa, ban công duy nhất bị bỏ phí. Ngân sách có hạn, chúng tôi chủ động hạ nhẹ chuẩn vật liệu và thiết bị, dồn chi phí cho thứ khó sửa về sau: mặt bằng. Giữ nguyên bếp, khu giặt sấy chuyển vào trong nhà, tận dụng đường cấp nước bếp và đường thoát WC master. Một cánh lớn kéo mở khi dùng, đóng lại thì cả khu giặt sấy khuất khỏi tầm nhìn. Ban công trở lại làm khoảng thở, cục nóng điều hòa được treo dọc vào góc khuất. Phòng master mở rộng WC, đổi hướng cửa tạo khoảng đệm, cửa mở vẫn giữ riêng tư cho giường ngủ.",
-      "cover": "/assets/uploads/album-hei-tower-01.jpg",
-      "photos": [],
-      "gallery": [
-        {
-          "image": "/assets/uploads/album-hei-tower-01.jpg"
-        },
-        {
-          "image": "/assets/uploads/album-hei-tower-02.jpg"
-        },
-        {
-          "image": "/assets/uploads/album-hei-tower-03.jpg"
-        },
-        {
-          "image": "/assets/uploads/album-hei-tower-04.jpg"
-        },
-        {
-          "image": "/assets/uploads/album-hei-tower-05.jpg"
-        }
-      ]
-    },
-    {
+      "category": "kien-truc",
       "name": "Nhà gia đình bác Thắng",
       "location": "Ngoại ô Hà Nội · 2022",
       "description": "Nhà nằm trong một ngõ nhỏ ngoại ô Hà Nội, đất 130m², phải đủ chỗ cho ba gia đình nhỏ trong một đại gia đình. Gia chủ muốn mọi sinh hoạt hướng vào trong để giữ riêng tư tối đa. Chúng tôi lấy giếng trời và một khoảng sân trong nhỏ làm lõi: nắng và gió vào nhà từ đó, không phải mở ra phía ngõ. Mỗi tầng đều có một không gian sinh hoạt chung để các gia đình gặp nhau mà không lấn vào phòng riêng. Càng lên cao, tầm nhìn càng mở. Ngôn ngữ tối giản, ưu tiên nắng và gió. Thiết kế đầu năm 2021, khởi công đầu năm 2022.",
@@ -52,6 +29,7 @@
       ]
     },
     {
+      "category": "kien-truc",
       "name": "Project 3",
       "location": "Chưa cập nhật",
       "description": "",
@@ -59,6 +37,7 @@
       "photos": []
     },
     {
+      "category": "kien-truc",
       "name": "Project 4",
       "location": "Chưa cập nhật",
       "description": "",
@@ -66,6 +45,7 @@
       "photos": []
     },
     {
+      "category": "kien-truc",
       "name": "Project 5",
       "location": "Chưa cập nhật",
       "description": "",
@@ -73,6 +53,32 @@
       "photos": []
     },
     {
+      "category": "noi-that",
+      "name": "Căn hộ Hei Tower",
+      "location": "Hà Nội · 2026",
+      "description": "Căn hộ 70m² ở tầng thương mại chuyển đổi, mặt bằng rời rạc, hành lang thừa, ban công duy nhất bị bỏ phí. Ngân sách có hạn, chúng tôi chủ động hạ nhẹ chuẩn vật liệu và thiết bị, dồn chi phí cho thứ khó sửa về sau: mặt bằng. Giữ nguyên bếp, khu giặt sấy chuyển vào trong nhà, tận dụng đường cấp nước bếp và đường thoát WC master. Một cánh lớn kéo mở khi dùng, đóng lại thì cả khu giặt sấy khuất khỏi tầm nhìn. Ban công trở lại làm khoảng thở, cục nóng điều hòa được treo dọc vào góc khuất. Phòng master mở rộng WC, đổi hướng cửa tạo khoảng đệm, cửa mở vẫn giữ riêng tư cho giường ngủ.",
+      "cover": "/assets/uploads/album-hei-tower-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-hei-tower-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-hei-tower-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-hei-tower-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-hei-tower-04.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-hei-tower-05.jpg"
+        }
+      ]
+    },
+    {
+      "category": "noi-that",
       "name": "Project 6",
       "location": "Chưa cập nhật",
       "description": "",
@@ -80,6 +86,7 @@
       "photos": []
     },
     {
+      "category": "noi-that",
       "name": "Project 7",
       "location": "Chưa cập nhật",
       "description": "",
@@ -87,6 +94,7 @@
       "photos": []
     },
     {
+      "category": "noi-that",
       "name": "Project 8",
       "location": "Chưa cập nhật",
       "description": "",

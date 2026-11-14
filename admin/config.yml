@@ -69,6 +69,7 @@ collections:
             widget: list
             summary: "{{fields.name}} — {{fields.location}}"
             fields:
+              - { label: "Loại công trình", name: category, widget: select, options: [{ label: "Kiến trúc (hàng trên)", value: "kien-truc" }, { label: "Nội thất (hàng dưới)", value: "noi-that" }], default: "kien-truc" }
               - { label: "Tên dự án", name: name, widget: string }
               - { label: "Địa điểm", name: location, widget: string, hint: "Ví dụ: Hà Nội · 2024" }
               - { label: "Mô tả ngắn", name: description, widget: text, required: false }
