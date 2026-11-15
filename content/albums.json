@@ -70,19 +70,41 @@
     },
     {
       "category": "kien-truc",
-      "name": "Project 4",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Công trình trường đại học",
+      "location": "TP. Hồ Chí Minh · Thiết kế 2025 · Khởi công 2026",
+      "description": "Công trình giáo dục quy mô lớn, nằm trong khuôn viên một trường đại học. Bài toán không chỉ là hình khối: công trình phải đáp ứng hàng loạt quy định riêng về bảo mật, phòng cháy và thoát hiểm. Giai đoạn ý tưởng kéo dài gần nửa năm, qua nhiều vòng thuyết minh và bảo vệ trước hội đồng chủ đầu tư rồi mới chốt phương án. Chúng tôi thực hiện mặt bằng, phối cảnh và thiết kế chi tiết. Công trình khởi công đầu năm 2026.",
+      "cover": "/assets/uploads/album-truong-dai-hoc-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-truong-dai-hoc-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-truong-dai-hoc-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-truong-dai-hoc-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-truong-dai-hoc-04.jpg"
+        }
+      ]
     },
     {
       "category": "kien-truc",
-      "name": "Project 5",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Nhà cô giáo",
+      "location": "Ngoại ô Hà Nội · 2025",
+      "description": "Ngôi nhà cô giáo của một người bạn học, ngân sách thi công eo hẹp, không đặt nặng hình thức. Bài toán là làm đúng và đủ với số tiền có hạn. Hồ sơ vẫn được triển khai bài bản như mọi công trình khác: công năng sắp xếp lại theo bối cảnh khu đất và nếp sống của gia chủ, phần nào cần thì làm kỹ, phần nào không cần thì bỏ. WHY|HOW thiết kế, một kiến trúc sư đối tác thi công, hoàn thành năm 2025. Nhận nhà xong, gia chủ đóng khung bộ bản vẽ và nhất định không cho hàng xóm mượn để sao chép.",
+      "cover": "/assets/uploads/album-nha-co-giao-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-nha-co-giao-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-co-giao-02.jpg"
+        }
+      ]
     },
     {
       "category": "noi-that",
@@ -111,27 +133,78 @@
     },
     {
       "category": "noi-that",
-      "name": "Project 6",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Căn hộ New Skyline",
+      "location": "Văn Quán, Hà Nội · 2023",
+      "description": "Căn chung cư cũ khoảng 80m², ba phòng ngủ: master, phòng con và phòng giúp việc. Bài toán là biến căn hộ thành một khối khách, ăn, bếp liền mạch mà vẫn đủ ba phòng ngủ. Toàn bộ giặt phơi dồn về bên trái cửa ra vào, cạnh một ô ban công đặt điều hòa. Phòng giúp việc đẩy ra phía ngoài, cạnh khu giặt và bếp, tách riêng sinh hoạt, trả lại khoảng khách, ăn, bếp nối liền với logia rộng. Logia giờ chỉ để cây và làm chỗ ngồi ngắm thành phố ngay cạnh phòng khách. Phòng master cải tạo toàn bộ, có vệ sinh riêng; một vệ sinh chung cho phần còn lại. Các phòng đều đi qua một không gian đệm, để việc đi lại trong nhà kín đáo và tinh tế.",
+      "cover": "/assets/uploads/album-new-skyline-van-quan-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-04.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-05.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-new-skyline-van-quan-06.jpg"
+        }
+      ]
     },
     {
       "category": "noi-that",
-      "name": "Project 7",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Nhà gia đình cô Hậu",
+      "location": "Phúc Thọ, Hà Nội · Thiết kế 2025",
+      "description": "Ngôi nhà ở ngoại thành Hà Nội, xây đã nhiều năm. Nhiều hạng mục xuống cấp, công năng cũ không còn hợp với nếp sinh hoạt hiện tại của gia đình. Khảo sát hiện trạng, chúng tôi thấy nhiều thứ đáng giữ: khoảng không gian sẵn có, bối cảnh xung quanh và thói quen sống quen thuộc của cả nhà. Giải pháp dựa trên chính những giá trị đó: đưa ánh sáng tự nhiên vào sâu trong nhà và tận dụng tối đa lợi thế sẵn có của khu đất. Mặt bằng tối giản, sắp xếp hợp lý, để ngôi nhà tiện dùng và bền theo thời gian.",
+      "cover": "/assets/uploads/album-nha-co-hau-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-nha-co-hau-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-co-hau-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-co-hau-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-co-hau-04.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-nha-co-hau-05.jpg"
+        }
+      ]
     },
     {
       "category": "noi-that",
-      "name": "Project 8",
-      "location": "Chưa cập nhật",
-      "description": "",
-      "cover": "",
-      "photos": []
+      "name": "Căn hộ Studio Ecopark",
+      "location": "Ecopark, Hưng Yên · 2025",
+      "description": "Căn hộ studio ở Ecopark, Hưng Yên, cải tạo và thiết kế nội thất. Hướng đi là sự mềm mại: gỗ sáng màu, bề mặt vải, tông kem ấm và ánh sáng gián tiếp. Vật liệu được chọn kỹ đến từng chi tiết nhỏ, để không gian ấm áp, dịu mắt và dễ ở mỗi ngày. Thiết kế và hoàn thiện năm 2025.",
+      "cover": "/assets/uploads/album-studio-ecopark-01.jpg",
+      "photos": [],
+      "gallery": [
+        {
+          "image": "/assets/uploads/album-studio-ecopark-01.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-studio-ecopark-02.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-studio-ecopark-03.jpg"
+        },
+        {
+          "image": "/assets/uploads/album-studio-ecopark-04.jpg"
+        }
+      ]
     }
   ]
 }
